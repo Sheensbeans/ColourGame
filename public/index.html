@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+        <style>
+            /* CSS for the loading spinner or message */
+            #loading {
+              display: none;
+              /* Add your styling for the loading element here */
+            }
+          </style>  
+    </head>
+    <body>
+        <h1>Enter Game</h1>
+        <p>Waiting for both players to press Start...</p>
+       
+        <div>
+            <button id="startButton" onclick="startGame()">Start</button>
+           
+        </div>
+        <img src = "Assets/loading.gif" id = "loading" alt = "loading" >
+<br>
+
+
+
+        <ul>
+            <li><a href="/2D.html">2D Mode</a></li>
+            <li><a href="/3D.html">3D Mode</a></li>
+            <li><a href="/game.html">game</a></li>
+        </ul>
+    </body>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+       
+        const socket = io();
+        
+    // When both players press Start, redirect to the game page
+     socket.on('bothPlayersReady', () => {
+      window.location.href = "game.html"; // Redirect to the game page
+    });
+    
+    // Function when the Start button is clicked
+    function startGame() {
+      socket.emit('playerReady'); // Notify the server that this player is ready
+      document.getElementById('startButton').disabled = true; // Disable the button
+      document.getElementById('loading').style.display = "block";
+      console.log('loading');
+    }
+          
+    </script>
+</html>
