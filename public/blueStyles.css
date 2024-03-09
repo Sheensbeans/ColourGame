@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000B6A;
+  }
+
+  .container {
+    text-align: center;
+  }
+  
+  .Blue {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+
+  }

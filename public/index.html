@@ -1,33 +1,28 @@
 <html>
     <head>
-        <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
-        <style>
-            /* CSS for the loading spinner or message */
-            #loading {
-              display: none;
-              /* Add your styling for the loading element here */
-            }
-          </style>  
+      <link rel="stylesheet" type="text/css" href="indexStyles.css">
+      <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script> 
     </head>
     <body>
-        <h1>Enter Game</h1>
+      <header>
+        <h1>Colour Changer Race</h1>
+        <h2>Decide who will be RED or BLUE. Click start and start racing!</h2>
+      </header>
+      
+      <div class="container">
         <p>Waiting for both players to press Start...</p>
+        <button id="startButton" onclick="startGame()">Start</button>
        
-        <div>
-            <button id="startButton" onclick="startGame()">Start</button>
-           
-        </div>
-        <img src = "Assets/loading.gif" id = "loading" alt = "loading" >
-<br>
-
-
-
-        <ul>
-            <li><a href="/2D.html">2D Mode</a></li>
-            <li><a href="/3D.html">3D Mode</a></li>
-            <li><a href="/game.html">game</a></li>
+      </div>
+      <img src="Assets/loading.gif" id="loading" alt="loading">
+      <footer>
+        <ul class="nav-links">
+          
+          <li><a href="/game.html">Game</a></li>
+          <li><a href="/bluewinner.html">Blue Winner</a></li>
+          <li><a href="/redwinner.html">Red Winner</a></li>
         </ul>
-    </body>
+      </footer>
 
 
     <script src="/socket.io/socket.io.js"></script>

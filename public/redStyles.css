@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #7D1702;
+  }
+
+  .container {
+    text-align: center;
+  }
+  
+  .Red {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+
+  }
